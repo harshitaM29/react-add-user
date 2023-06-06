@@ -7,13 +7,7 @@ import UserList from './component/User/UserList';
 const App = () => {
 
 
-  const users = [
-    {
-      id:'e1',
-      name:'harshita',
-      age: '23'
-  }
-  ];
+  const users = [];
   const [user,setUser] = useState(users);
   const addUserHandler = user => {
     setUser(preUser => {

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Card from '../UI/Card';
 
 const UserForm = props => {
+    const classes = 'new-user ' + props.className;
     const [enteredName,setEnteredName] = useState('');
     const [enteredAge,setEnteredAge] = useState('');
     const [error, setError] = useState(false);
@@ -42,7 +43,7 @@ const UserForm = props => {
     return (
         <div>
         {error && <InvalidUserModal onConfirm={closeDialog} /> }
-        <Card>
+        <Card> 
             <form onSubmit={addUser}>
                 <div className="new-user">
                     <label>Username</label>

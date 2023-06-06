@@ -4,16 +4,19 @@ import Card from "../UI/Card";
 
 const InvalidUserModal = props => {
     return (
-        <div>
-        <div className="invaliduser-modal" />
+    
         <Card className='modal'>
-            <h2>Invalid Input</h2>
+            <header className="header">
+                <h2>Invalid Input</h2>
+            </header>
+            <div className="content">
             <p>Please enter a valid age</p>
+            </div>
             <footer className="actions">
             <Button onClick={props.onConfirm}>Okay</Button>
             </footer>
         </Card>
-        </div>
+     
     )
 };
 
