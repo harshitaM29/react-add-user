@@ -1,0 +1,14 @@
+.users-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .users {
+    padding: 0.5rem;
+    background-color: rgb(31, 31, 31);
+    margin: 0.5rem auto;
+    width: 35rem;
+    max-width: 95%;
+    
+    
+  }
