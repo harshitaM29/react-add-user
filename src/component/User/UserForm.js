@@ -2,6 +2,7 @@ import './UserForm.css';
 import InvalidUserModal from '../Modal/InvalidUserModal';
 import Button from '../UI/Button';
 import { useState } from 'react';
+import Card from '../UI/Card';
 
 const UserForm = props => {
     const [enteredName,setEnteredName] = useState('');
@@ -14,6 +15,7 @@ const UserForm = props => {
     const updateAge = (e) => {
         setEnteredAge(e.target.value)
     }
+  
     const addUser = (e) =>{
         e.preventDefault();
         const userDetails = {
@@ -23,19 +25,24 @@ const UserForm = props => {
         }
         if(+enteredAge.toString() <= 0) {
             setError(true);
+            return;
           
         }
-        props.onAddUser(userDetails);
+        props.onAddUser(userDetails)
         setEnteredAge('');
         setEnteredName('');
 
 
 
     }
+    const closeDialog = () => {
+        setError(false);
+        return;
+    }
     return (
         <div>
-        {error && <InvalidUserModal /> }
-        <div>
+        {error && <InvalidUserModal onConfirm={closeDialog} /> }
+        <Card>
             <form onSubmit={addUser}>
                 <div className="new-user">
                     <label>Username</label>
@@ -47,7 +54,7 @@ const UserForm = props => {
                 </div>
             <Button type="submit">Add User</Button>
             </form>
-        </div>
+        </Card> 
         </div>
     )
  
